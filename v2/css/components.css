@@ -1,0 +1,41 @@
+/* ===== components.css — componentes propios del sitio ===== */
+.glass-header{background:transparent;transition:background-color .3s,box-shadow .3s}
+.glass-header.scrolled,.glass-header.menu-open{background:rgba(7,22,44,.94);box-shadow:0 10px 30px -14px rgba(0,0,0,.6)}
+.nav-link{position:relative;transition:color .2s}
+.nav-link.active{color:#2dd4bf}
+.mobile-nav-link{display:block;padding:.85rem 1rem;border-radius:.75rem;font-weight:600;font-size:.9rem;color:#e2e8f0;transition:background-color .2s}
+.mobile-nav-link:hover,.mobile-nav-link:active{background:rgba(255,255,255,.08)}
+.btn-teal{background:linear-gradient(135deg,#00bfa5,#00897b);color:#fff;box-shadow:0 10px 22px -10px rgba(0,191,165,.7);transition:transform .2s,box-shadow .2s,filter .2s}
+.btn-teal:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 14px 26px -10px rgba(0,191,165,.8)}
+.btn-teal:active{transform:translateY(0)}
+.btn-teal-sm{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:700;color:#00897b;background:#f0fdfa;border:1px solid #99f6e4;padding:.5rem 1rem;border-radius:9999px;transition:background-color .2s,color .2s}
+.btn-teal-sm:hover{background:#00bfa5;color:#fff;border-color:#00bfa5}
+.floating-card{background:#fff;border:1px solid #e2e8f0;box-shadow:0 12px 32px -16px rgba(11,37,69,.25);transition:transform .3s,box-shadow .3s}
+.floating-card:hover{transform:translate3d(0,-6px,0);box-shadow:0 22px 40px -18px rgba(11,37,69,.35)}
+.banner-teal-gradient{background:linear-gradient(120deg,#05445e 0%,#0e7490 55%,#00897b 100%)}
+.route-diagram-box{box-shadow:0 18px 40px -24px rgba(11,37,69,.3)}
+.faq-toggle{width:100%;text-align:left}
+.faq-icon{transition:transform .25s}
+.faq-toggle[aria-expanded=true] .faq-icon{transform:rotate(180deg)}
+.faq-content{border-top:1px solid #f1f5f9}
+.select-plan-btn{transition:transform .2s,background-color .2s}
+.ticket-badge-light{background:linear-gradient(135deg,#0b2545,#0e7490)}
+.ticket-notch-left,.ticket-notch-right{position:absolute;top:-12px;width:24px;height:24px;border-radius:50%;background:#0a1d38}
+.ticket-notch-left{left:-12px}.ticket-notch-right{right:-12px}
+.hero-indicator-dot{display:none}
+#ticket-modal.flex{animation:fadeIn .25s ease-out}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.form-error{color:#b91c1c;font-size:.7rem;margin-top:.25rem}
+input.invalid{border-color:#ef4444}
+/* Impresión del pase digital */
+@media print{
+  body>*:not(#ticket-modal){display:none!important}
+  #ticket-modal{position:static!important;background:#fff!important;padding:0!important;display:block!important}
+  .no-print{display:none!important}
+  .ticket-notch-left,.ticket-notch-right{background:#fff}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* Agenda: hora a la izquierda, actividad alineada */
+#cronograma .divide-y>div,#cronograma .bg-ocean-900.flex{justify-content:flex-start;gap:1.25rem}
+#cronograma .divide-y>div>span:first-child,#cronograma .bg-ocean-900.flex>span:first-child{min-width:5.75rem}
