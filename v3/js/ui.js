@@ -7,6 +7,7 @@
   var root = document.documentElement;
 
   if (SITE.pagosActivos) root.setAttribute('data-pagos-on', '');
+  if (SITE.googleFormActivo) root.setAttribute('data-gform-on', '');
   try { if (sessionStorage.getItem('lite') === '1' || (navigator.connection && navigator.connection.saveData)) root.classList.add('lite'); } catch (e) {}
 
   /* ---- Fechas dinámicas desde config.js ---- */

@@ -1,0 +1,101 @@
+/* ===== components.css — componentes propios del sitio ===== */
+.glass-header{background:transparent;transition:background-color .3s,box-shadow .3s}
+.glass-header.scrolled,.glass-header.menu-open{background:rgba(7,22,44,.94);box-shadow:0 10px 30px -14px rgba(0,0,0,.6)}
+.nav-link{position:relative;transition:color .2s}
+.nav-link.active{color:#2dd4bf}
+.mobile-nav-link{display:block;padding:.85rem 1rem;border-radius:.75rem;font-weight:600;font-size:.9rem;color:#e2e8f0;transition:background-color .2s}
+.mobile-nav-link:hover,.mobile-nav-link:active{background:rgba(255,255,255,.08)}
+.btn-teal{background:linear-gradient(135deg,#00bfa5,#00897b);color:#fff;box-shadow:0 10px 22px -10px rgba(0,191,165,.7);transition:transform .2s,box-shadow .2s,filter .2s}
+.btn-teal:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 14px 26px -10px rgba(0,191,165,.8)}
+.btn-teal:active{transform:translateY(0)}
+.btn-teal-sm{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:700;color:#00897b;background:#f0fdfa;border:1px solid #99f6e4;padding:.5rem 1rem;border-radius:9999px;transition:background-color .2s,color .2s}
+.btn-teal-sm:hover{background:#00bfa5;color:#fff;border-color:#00bfa5}
+.floating-card{background:#fff;border:1px solid #e2e8f0;box-shadow:0 12px 32px -16px rgba(11,37,69,.25);transition:transform .3s,box-shadow .3s}
+.floating-card:hover{transform:translate3d(0,-6px,0);box-shadow:0 22px 40px -18px rgba(11,37,69,.35)}
+.banner-teal-gradient{background:linear-gradient(120deg,#05445e 0%,#0e7490 55%,#00897b 100%)}
+.route-diagram-box{box-shadow:0 18px 40px -24px rgba(11,37,69,.3)}
+.faq-toggle{width:100%;text-align:left}
+.faq-icon{transition:transform .25s}
+.faq-toggle[aria-expanded=true] .faq-icon{transform:rotate(180deg)}
+.faq-content{border-top:1px solid #f1f5f9}
+.select-plan-btn{transition:transform .2s,background-color .2s}
+.ticket-badge-light{background:linear-gradient(135deg,#0b2545,#0e7490)}
+.ticket-notch-left,.ticket-notch-right{position:absolute;top:-12px;width:24px;height:24px;border-radius:50%;background:#0a1d38}
+.ticket-notch-left{left:-12px}.ticket-notch-right{right:-12px}
+.hero-indicator-dot{display:none}
+#ticket-modal.flex{animation:fadeIn .25s ease-out}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.form-error{color:#b91c1c;font-size:.7rem;margin-top:.25rem}
+input.invalid{border-color:#ef4444}
+/* Impresión del pase digital */
+@media print{
+  body>*:not(#ticket-modal){display:none!important}
+  #ticket-modal{position:static!important;background:#fff!important;padding:0!important;display:block!important}
+  .no-print{display:none!important}
+  .ticket-notch-left,.ticket-notch-right{background:#fff}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* Agenda: hora a la izquierda, actividad alineada */
+#cronograma .divide-y>div,#cronograma .bg-ocean-900.flex{justify-content:flex-start;gap:1.25rem}
+#cronograma .divide-y>div>span:first-child,#cronograma .bg-ocean-900.flex>span:first-child{min-width:5.75rem}
+
+/* ===== v3: logo con bandera ===== */
+.flag-tile{border-radius:.75rem;overflow:hidden;flex-shrink:0;box-shadow:0 0 0 1.5px rgba(255,255,255,.9),0 8px 18px -6px rgba(0,0,0,.55);background:#00247d}
+.flag-tile--sm{border-radius:.55rem;box-shadow:0 0 0 1.2px rgba(255,255,255,.85),0 6px 12px -5px rgba(0,0,0,.5)}
+.flag-svg{display:block;width:100%;height:100%}
+
+/* ===== v3: formulario de registro ===== */
+.reg-banner{margin:-2rem -2rem 1.75rem;padding:2rem 1.5rem 1.6rem;border-radius:1.5rem 1.5rem 0 0;text-align:center;color:#fff;background:linear-gradient(135deg,#0b2545 0%,#0e7490 60%,#00897b 100%);position:relative;overflow:hidden}
+.reg-banner::after{content:"";position:absolute;right:-60px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 68%);pointer-events:none}
+.reg-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border-radius:9999px;background:linear-gradient(135deg,#f59e0b,#d97706);box-shadow:0 8px 18px -8px rgba(245,158,11,.8)}
+.reg-badge .icon{width:.9rem;height:.9rem}
+.reg-banner h3{margin-top:.9rem;font-size:clamp(1.7rem,5vw,2.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.1}
+.reg-banner p{margin:.55rem auto 0;max-width:30rem;font-size:.82rem;line-height:1.55;color:#d6f4f0}
+.reg-perks{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem .9rem;margin-top:1.1rem;font-size:.72rem;font-weight:700;color:#fff}
+.reg-perks li{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:.3rem .7rem;border-radius:9999px}
+.reg-perks .icon{width:.85rem;height:.85rem;color:#5eead4;stroke-width:3}
+@media (min-width:640px){.reg-banner{margin:-2.5rem -2.5rem 2rem;padding:2.4rem 2rem 2rem}}
+#registration-form input:focus{box-shadow:0 0 0 3px rgba(0,191,165,.18)}
+#registration-form input,#registration-form select{font-size:16px}
+@media (min-width:640px){#registration-form input,#registration-form select{font-size:.8rem}}
+
+/* ===== v3: contáctanos ===== */
+.contact{background:linear-gradient(180deg,#fff 0%,#f0fdfa 100%);padding:6rem 0 6.5rem;border-top:1px solid #e2e8f0}
+.contact-inner{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+.contact-head{text-align:center;max-width:40rem;margin:0 auto 2.75rem}
+.contact-kicker{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#00897b;background:#f0fdfa;border:1px solid #99f6e4;padding:.4rem .95rem;border-radius:9999px}
+.contact-head h2{margin-top:1rem;font-size:clamp(1.7rem,4.4vw,2.6rem);font-weight:900;letter-spacing:-.02em;line-height:1.12;color:#0b2545}
+.contact-head h2 span{color:#00bfa5}
+.contact-head p{margin-top:.8rem;font-size:.92rem;line-height:1.65;color:#64748b}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
+@media (min-width:720px){.contact-grid{grid-template-columns:1fr 1fr;gap:1.5rem}}
+.contact-card{position:relative;display:flex;flex-direction:column;gap:.35rem;padding:1.75rem 1.6rem 1.5rem;border-radius:1.5rem;background:#fff;border:1px solid #e2e8f0;box-shadow:0 18px 40px -26px rgba(11,37,69,.45);transition:transform .3s,box-shadow .3s,border-color .3s;overflow:hidden}
+.contact-card:hover{transform:translate3d(0,-5px,0);box-shadow:0 26px 46px -24px rgba(11,37,69,.5);border-color:#5eead4}
+.contact-card::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#00bfa5,#0e7490)}
+.contact-card--wa::before{background:linear-gradient(90deg,#25d366,#128c7e)}
+.contact-ico{display:grid;place-items:center;width:3rem;height:3rem;border-radius:1rem;background:#f0fdfa;color:#00897b;margin-bottom:.5rem}
+.contact-card--wa .contact-ico{background:#ecfdf3;color:#128c7e}
+.contact-ico .icon{width:1.45rem;height:1.45rem}
+.contact-label{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#64748b}
+.contact-value{font-size:clamp(1rem,3.4vw,1.2rem);font-weight:800;color:#0b2545;word-break:break-word}
+.contact-hint{font-size:.8rem;color:#64748b;line-height:1.5}
+.contact-cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;font-size:.8rem;font-weight:800;color:#00897b}
+.contact-card--wa .contact-cta{color:#128c7e}
+.contact-cta .icon{width:1rem;height:1rem;transition:transform .2s}
+.contact-card:hover .contact-cta .icon{transform:translateX(4px)}
+.contact-loc{display:flex;align-items:center;justify-content:center;gap:.45rem;margin-top:2rem;font-size:.8rem;color:#64748b}
+.contact-loc .icon{width:1rem;height:1rem;color:#00bfa5}
+
+/* ticket abierto: oculta el asistente */
+.modal-open .as-fab,.modal-open .as-panel{display:none}
+
+/* ===== v3: pulido móvil ===== */
+@media (max-width:639px){
+  .glass-header .h-20{height:4.25rem}
+  .sponsors{padding:4.5rem 0 4rem}
+  .sponsor-card{width:12.5rem}
+  .sponsor-card img{height:8.8rem}
+  section.py-24{padding-top:4.5rem;padding-bottom:4.5rem}
+  .floating-card{transform:none!important}
+}

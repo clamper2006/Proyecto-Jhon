@@ -46,6 +46,7 @@
 .max-w-md{max-width:28rem}
 .max-w-sm{max-width:24rem}
 .max-w-xl{max-width:36rem}
+.min-w-0{min-width:0}
 .min-w-\[68px\]{min-width:68px}
 .w-0\.5{width:0.125rem}
 .w-1{width:0.25rem}
@@ -65,6 +66,7 @@
 .w-full{width:100%}
 .-mt-16{margin-top:-4rem}
 .mb-1{margin-bottom:0.25rem}
+.mb-10{margin-bottom:2.5rem}
 .mb-12{margin-bottom:3rem}
 .mb-14{margin-bottom:3.5rem}
 .mb-16{margin-bottom:4rem}
@@ -73,10 +75,10 @@
 .mb-4{margin-bottom:1rem}
 .mb-5{margin-bottom:1.25rem}
 .mb-6{margin-bottom:1.5rem}
-.mb-8{margin-bottom:2rem}
 .ml-2{margin-left:0.5rem}
 .mt-0\.5{margin-top:0.125rem}
 .mt-1{margin-top:0.25rem}
+.mt-16{margin-top:4rem}
 .mt-2{margin-top:0.5rem}
 .mt-3{margin-top:0.75rem}
 .mt-4{margin-top:1rem}
@@ -134,7 +136,6 @@
 .gap-4{gap:1rem}
 .gap-5{gap:1.25rem}
 .gap-6{gap:1.5rem}
-.gap-7{gap:1.75rem}
 .gap-8{gap:2rem}
 .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
 .grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -182,6 +183,8 @@
 .text-4xl{font-size:2.25rem;line-height:2.5rem}
 .text-\[10px\]{font-size:10px}
 .text-\[11px\]{font-size:11px}
+.text-\[13px\]{font-size:13px}
+.text-\[15px\]{font-size:15px}
 .text-base{font-size:1rem;line-height:1.5rem}
 .text-center{text-align:center}
 .text-left{text-align:left}
@@ -226,7 +229,6 @@
 .bg-amber-500{background-color:#f59e0b}
 .bg-blue-100{background-color:#dbeafe}
 .bg-emerald-100{background-color:#d1fae5}
-.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--gs))}
 .bg-ocean-900{background-color:#0b2545}
 .bg-ocean-950{background-color:#07162c}
 .bg-ocean-950\/50{background-color:rgb(7 22 44 / 0.5)}
@@ -248,8 +250,6 @@
 .bg-white{background-color:#ffffff}
 .bg-white\/10{background-color:rgb(255 255 255 / 0.1)}
 .bg-white\/20{background-color:rgb(255 255 255 / 0.2)}
-.from-amber-500{--gf:#f59e0b;--gs:var(--gf),var(--gt,transparent)}
-.to-amber-700{--gt:#b45309}
 .border{border-width:1px}
 .border-2{border-width:2px}
 .border-b{border-bottom-width:1px}
@@ -281,7 +281,6 @@
 .ring-4{box-shadow:0 0 0 4px var(--rc,#3b82f680)}
 .ring-teal-100{--rc:#ccfbf1}
 .shadow-2xl{box-shadow:0 25px 50px -12px var(--sc,rgb(0 0 0/.25))}
-.shadow-amber-500\/25{--sc:rgb(245 158 11 / 0.25)}
 .shadow-lg{box-shadow:0 10px 15px -3px var(--sc,rgb(0 0 0/.1)),0 4px 6px -4px var(--sc,rgb(0 0 0/.1))}
 .shadow-md{box-shadow:0 4px 6px -1px var(--sc,rgb(0 0 0/.1)),0 2px 4px -2px var(--sc,rgb(0 0 0/.1))}
 .shadow-sm{box-shadow:0 1px 2px 0 var(--sc,rgb(0 0 0/.05))}
@@ -297,6 +296,7 @@
 .animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite}
 .duration-300{transition-duration:0.3s}
 .focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}
+.hover\:text-teal-300:hover{color:#5eead4}
 .hover\:text-teal-400:hover{color:#2dd4bf}
 .hover\:text-white:hover{color:#ffffff}
 .selection\:text-white ::selection,.selection\:text-white::selection{color:#ffffff}
@@ -313,11 +313,16 @@
 .group:hover .group-hover\:scale-105{--s:1.05;transform:translate(var(--tx,0),var(--ty,0)) scale(var(--s,1))}
 .group:hover .group-hover\:translate-x-1{--tx:0.25rem;transform:translate(var(--tx,0),var(--ty,0)) scale(var(--s,1))}
 @media (min-width:640px){
+.sm\:block{display:block}
 .sm\:grid{display:grid}
-.sm\:inline-flex{display:inline-flex}
+.sm\:hidden{display:none}
+.sm\:inline{display:inline}
 .sm\:-mt-24{margin-top:-6rem}
 .sm\:p-10{padding:2.5rem}
+.sm\:px-5{padding-left:1.25rem;padding-right:1.25rem}
 .sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}
+.sm\:gap-2{gap:0.5rem}
+.sm\:gap-3{gap:0.75rem}
 .sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}
@@ -325,6 +330,7 @@
 .sm\:text-6xl{font-size:3.75rem;line-height:1}
 .sm\:text-base{font-size:1rem;line-height:1.5rem}
 .sm\:text-sm{font-size:.875rem;line-height:1.25rem}
+.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}
 }
 @media (min-width:768px){
 .md\:col-span-5{grid-column:span 5 / span 5}
@@ -336,8 +342,6 @@
 .md\:flex-row{flex-direction:row}
 }
 @media (min-width:1024px){
-.lg\:flex{display:flex}
-.lg\:hidden{display:none}
 .lg\:-mt-28{margin-top:-7rem}
 .lg\:px-8{padding-left:2rem;padding-right:2rem}
 .lg\:col-span-5{grid-column:span 5 / span 5}
@@ -348,4 +352,8 @@
 .lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}
 .lg\:text-5xl{font-size:3rem;line-height:1}
 .lg\:text-\[62px\]{font-size:62px}
+}
+@media (min-width:1280px){
+.xl\:flex{display:flex}
+.xl\:hidden{display:none}
 }

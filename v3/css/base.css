@@ -23,6 +23,9 @@ table{border-collapse:collapse}
 /* Pagos: ocultos hasta activar SITE.pagosActivos en js/config.js */
 [data-pagos]{display:none!important}
 html[data-pagos-on] [data-pagos]{display:revert!important}
+/* Formulario de Google: oculto en v3 (SITE.googleFormActivo en js/config.js) */
+[data-gform]{display:none!important}
+html[data-gform-on] [data-gform]{display:revert!important}
 /* Aparición al hacer scroll (solo con JS activo) */
 .js [data-reveal]{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .js [data-reveal]:not(.in){opacity:0;transform:translate3d(0,22px,0)}

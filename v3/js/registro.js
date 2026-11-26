@@ -10,11 +10,11 @@
   function openModal() {
     last = document.activeElement;
     modal.classList.remove('hidden'); modal.classList.add('flex');
-    document.body.style.overflow = 'hidden'; closeBtn.focus();
+    document.body.style.overflow = 'hidden'; document.body.classList.add('modal-open'); closeBtn.focus();
   }
   function closeModal() {
     modal.classList.add('hidden'); modal.classList.remove('flex');
-    document.body.style.overflow = ''; if (last && last.focus) last.focus();
+    document.body.style.overflow = ''; document.body.classList.remove('modal-open'); if (last && last.focus) last.focus();
   }
   form.addEventListener('submit', function (e) {
     e.preventDefault();

@@ -1,100 +1,77 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venezuela Exporta — Taller Práctico de Exportación | Abierto a Todo Público</title>
-  <meta name="description" content="Venezuela Exporta: Taller formativo de comercio exterior abierto a todo público. Aprende la ruta oficial de diez pasos para exportar desde Venezuela sin necesidad de experiencia previa.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Venezuela Exporta — Taller Práctico de Exportación | Primera edición gratuita</title>
+  <meta name="description" content="Venezuela Exporta: taller práctico de comercio exterior, abierto a todo público y gratuito en su primera edición. Aprende la ruta oficial de diez pasos para exportar desde Venezuela sin experiencia previa.">
+  <meta name="theme-color" content="#0b2545">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Venezuela Exporta — Taller de Exportación (primera edición gratuita)">
+  <meta property="og:description" content="Seis módulos prácticos y la ruta oficial de diez pasos para exportar desde Venezuela, explicada desde cero.">
+  <meta property="og:locale" content="es_VE">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script>document.documentElement.className+=' js'</script>
 
-  <!-- Google Fonts: Plus Jakarta Sans & Space Mono -->
+  <!-- Fuentes (con fallback del sistema: la página se ve bien aunque no carguen) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/ship3d-0.svg">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"Space Mono"', 'monospace'],
-          },
-          colors: {
-            teal: {
-              400: '#2DD4BF',
-              500: '#00BFA5',
-              600: '#00897B',
-              700: '#0F766E',
-            },
-            ocean: {
-              700: '#0E7490',
-              800: '#05445E',
-              900: '#0B2545',
-              950: '#07162C',
-            },
-            accent: {
-              gold: '#B8842E',
-              goldlight: '#F5E6CC',
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Estilos propios (sin Tailwind en runtime) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sponsors.css">
+  <link rel="stylesheet" href="css/asistente.css">
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white">
+  <a href="#publico" class="skip-link">Saltar al contenido</a>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M12 22V8M5 12H2a10 10 0 0 0 20 0h-3"/></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="2" y="6" width="20" height="14" rx="2"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="i-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol><symbol id="i-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol><symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c3 3 9 3 12 0v-5"/></symbol><symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5M9 18h6M10 22h4"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol><symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol><symbol id="i-navigation" viewBox="0 0 24 24"><path d="M3 11 22 2l-9 19-2-8-8-2z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 9V3h12v6"/><rect x="6" y="14" width="12" height="8"/></symbol><symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol><symbol id="i-ticket" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM13 5v2M13 17v2M13 11v2"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol><symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol><symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.94 14.34 9 17l-.94-2.66a2 2 0 0 0-1.4-1.4L4 12l2.66-.94a2 2 0 0 0 1.4-1.4L9 7l.94 2.66a2 2 0 0 0 1.4 1.4L14 12l-2.66.94a2 2 0 0 0-1.4 1.4zM19 3v4M21 5h-4"/></symbol><symbol id="flag-ve" viewBox="0 0 90 60" preserveAspectRatio="xMidYMid slice"><rect width="90" height="20.1" fill="#FFCC00"/><rect y="20" width="90" height="20.1" fill="#00247D"/><rect y="40" width="90" height="20" fill="#CF142B"/><polygon points="59.74,31.51 60.39,33.32 62.31,33.38 60.79,34.55 61.33,36.39 59.74,35.31 58.15,36.39 58.70,34.55 57.17,33.38 59.09,33.32" fill="#fff"/><polygon points="57.12,26.64 57.76,28.45 59.69,28.50 58.16,29.68 58.71,31.52 57.12,30.44 55.53,31.52 56.07,29.68 54.55,28.50 56.47,28.45" fill="#fff"/><polygon points="52.95,22.99 53.60,24.80 55.52,24.86 54.00,26.03 54.54,27.88 52.95,26.79 51.36,27.88 51.90,26.03 50.38,24.86 52.30,24.80" fill="#fff"/><polygon points="47.77,21.05 48.41,22.86 50.34,22.91 48.81,24.09 49.35,25.93 47.77,24.85 46.18,25.93 46.72,24.09 45.20,22.91 47.12,22.86" fill="#fff"/><polygon points="42.23,21.05 42.88,22.86 44.80,22.91 43.28,24.09 43.82,25.93 42.23,24.85 40.65,25.93 41.19,24.09 39.66,22.91 41.59,22.86" fill="#fff"/><polygon points="37.05,22.99 37.70,24.80 39.62,24.86 38.10,26.03 38.64,27.88 37.05,26.79 35.46,27.88 36.00,26.03 34.48,24.86 36.40,24.80" fill="#fff"/><polygon points="32.88,26.64 33.53,28.45 35.45,28.50 33.93,29.68 34.47,31.52 32.88,30.44 31.29,31.52 31.84,29.68 30.31,28.50 32.24,28.45" fill="#fff"/><polygon points="30.26,31.51 30.91,33.32 32.83,33.38 31.30,34.55 31.85,36.39 30.26,35.31 28.67,36.39 29.21,34.55 27.69,33.38 29.61,33.32" fill="#fff"/></symbol><symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.65-4.8A9 9 0 1 1 8 19.4z"/><path d="M9.2 8.6c-.3.5-.3 1.3.3 2.4s1.7 2.2 2.8 2.7c.9.4 1.4.1 1.8-.3l.4-.6-1.6-.9-.6.5c-.7-.3-1.4-.9-1.8-1.7l.5-.6-.9-1.7z" fill="currentColor" stroke="none"/></symbol></defs></svg>
 
   <!-- ================================================================= -->
   <!-- 1. NAVIGATION BAR                                                 -->
   <!-- ================================================================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-header">
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 glass-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
         <!-- Brand Seal & Logo -->
-        <a href="#inicio" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-white shadow-md shadow-amber-500/25 group-hover:scale-105 transition-transform">
-            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2L3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4z"/>
-              <path d="M8.5 12.5l2.5 2.5 4.5-5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+        <a href="#inicio" class="flex items-center gap-2 sm:gap-3 group min-w-0">
+          <div class="flag-tile w-10 h-10 group-hover:scale-105 transition-transform"><svg class="flag-svg" aria-hidden="true"><use href="#flag-ve"/></svg></div>
           <div>
-            <div class="text-xl font-black tracking-tight text-white flex items-center gap-1.5">
+            <div class="text-[15px] sm:text-xl font-black tracking-tight text-white flex items-center gap-1.5">
               Venezuela<span class="text-teal-400 font-bold">Exporta</span>
             </div>
-            <p class="text-[10px] font-semibold tracking-wider text-slate-300 uppercase">Taller de Comercio Exterior · Abierto a Todo Público</p>
+            <p class="hidden sm:block text-[10px] font-semibold tracking-wider text-slate-300 uppercase">Taller de Comercio Exterior · Abierto a Todo Público</p>
           </div>
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-200">
-          <a href="#inicio" class="hover:text-teal-400 transition-colors">Inicio</a>
-          <a href="#publico" class="hover:text-teal-400 transition-colors">¿Para Quién Es?</a>
-          <a href="#modulos" class="hover:text-teal-400 transition-colors">6 Módulos</a>
-          <a href="#rutas" class="hover:text-teal-400 transition-colors">Rutas de Exportación</a>
-          <a href="#cronograma" class="hover:text-teal-400 transition-colors">Cronograma</a>
-          <a href="#inversion" class="hover:text-teal-400 transition-colors">Inversión & Pagos</a>
-          <a href="#faq" class="hover:text-teal-400 transition-colors">FAQ</a>
+        <nav class="hidden xl:flex items-center gap-4 text-[13px] font-medium text-slate-200">
+          <a href="#inicio" class="nav-link hover:text-teal-400 transition-colors">Inicio</a>
+          <a href="#publico" class="nav-link hover:text-teal-400 transition-colors">¿Para Quién Es?</a>
+          <a href="#modulos" class="nav-link hover:text-teal-400 transition-colors">6 Módulos</a>
+          <a href="#rutas" class="nav-link hover:text-teal-400 transition-colors">Rutas de Exportación</a>
+          <a href="#cronograma" class="nav-link hover:text-teal-400 transition-colors">Cronograma</a>
+          <a data-pagos href="#inversion" class="nav-link hover:text-teal-400 transition-colors">Inversión & Pagos</a>
+          <a href="#faq" class="nav-link hover:text-teal-400 transition-colors">FAQ</a>
+          <a href="#contacto" class="nav-link hover:text-teal-400 transition-colors">Contacto</a>
         </nav>
 
-        <!-- Right CTA: Direct Google Form Button -->
-        <div class="flex items-center gap-3">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScn84gURqvDGxuDQjgawbleKznxOlFO-nxruaA_dk5CeyrjCA/viewform" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold btn-teal shadow-md">
-            <span>Formulario Oficial</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        <!-- Right CTA: registro en la página -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="#registro" class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 rounded-full text-xs font-bold btn-teal shadow-md whitespace-nowrap">
+            <span class="sm:hidden">Regístrate</span><span class="hidden sm:inline">Regístrate Ahora</span>
+            <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-arrow-right"/></svg>
           </a>
 
-          <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Abrir menú">
-            <i data-lucide="menu" class="w-6 h-6"></i>
+          <button id="mobile-menu-btn" class="xl:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-menu"/></svg>
           </button>
         </div>
 
@@ -102,18 +79,17 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-700 bg-ocean-950 px-4 pt-3 pb-6 space-y-3">
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-slate-700 bg-ocean-950 px-4 pt-3 pb-6 space-y-3">
       <a href="#inicio" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">Inicio</a>
       <a href="#publico" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">¿Para Quién Es?</a>
       <a href="#modulos" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">Los 6 Módulos Paso a Paso</a>
       <a href="#rutas" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">Rutas de Exportación</a>
       <a href="#cronograma" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">Cronograma de la Jornada</a>
-      <a href="#inversion" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">Inversión (US$ 65 / $80)</a>
+      <a data-pagos href="#inversion" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">Inversión (US$ 65 / $80)</a>
       <a href="#faq" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">Preguntas Frecuentes</a>
+      <a href="#contacto" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 hover:text-teal-400">Contáctanos</a>
       <div class="pt-2">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScn84gURqvDGxuDQjgawbleKznxOlFO-nxruaA_dk5CeyrjCA/viewform" target="_blank" rel="noopener" class="mobile-nav-link block text-center w-full py-3 rounded-xl font-bold btn-teal text-white">
-          Ir al Formulario Oficial de Google →
-        </a>
+        <a href="#registro" class="mobile-nav-link block text-center w-full py-3 rounded-xl font-bold btn-teal text-white">Regístrate Ahora →</a>
       </div>
     </div>
   </header>
@@ -121,20 +97,31 @@
   <!-- ================================================================= -->
   <!-- 2. HERO SECTION (OCEAN AERIAL CONTAINER SHIP + OPEN AUDIENCE)     -->
   <!-- ================================================================= -->
-  <section id="inicio" class="relative pt-28 pb-32 sm:pb-44 lg:pb-52 overflow-hidden flex items-center min-h-[640px] lg:min-h-[740px] text-white transition-all duration-700" 
-    style="background: linear-gradient(to right, rgba(7, 22, 44, 0.93) 0%, rgba(11, 37, 69, 0.82) 48%, rgba(0, 70, 90, 0.35) 85%, rgba(0, 0, 0, 0.2) 100%), 
-           url('assets/naviera-navegando.jpg') center right / cover no-repeat;">
-    
-    <!-- Left & Right Slider Controls: Naviera / Puerto Comercial -->
-    <button id="hero-prev-btn" class="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-lg border border-white/30 bg-black/30 backdrop-blur-md items-center justify-center text-white/80 hover:text-white hover:border-teal-400 hover:bg-teal-500/30 transition-all z-20 cursor-pointer" aria-label="Cambiar vista anterior">
-      <i data-lucide="chevron-left" class="w-6 h-6"></i>
-    </button>
-    <button id="hero-next-btn" class="hidden lg:flex absolute right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-lg border border-white/30 bg-black/30 backdrop-blur-md items-center justify-center text-white/80 hover:text-white hover:border-teal-400 hover:bg-teal-500/30 transition-all z-20 cursor-pointer" aria-label="Cambiar vista siguiente">
-      <i data-lucide="chevron-right" class="w-6 h-6"></i>
-    </button>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="max-w-2xl">
+  <section id="inicio" class="hero" data-hero aria-label="Inicio">
+    <div class="hero-stage">
+      <div class="hero-scene hero-scene--top" aria-hidden="true">
+        <div class="sea-top"></div>
+        <div class="s3d s3d--top" data-s3d="top"><div class="s3d-in"><div class="s3d-bob"><img class="s3d-f" data-f="0" src="assets/ship3d-0.svg" alt="" width="1800" height="500" decoding="async" fetchpriority="high"><img class="s3d-f" data-f="1" src="assets/ship3d-1.svg" alt="" width="1800" height="500" decoding="async"><img class="s3d-f" data-f="2" src="assets/ship3d-2.svg" alt="" width="1800" height="500" decoding="async"></div></div></div>
+        <div class="hero-scrim"></div>
+      </div>
+      <div class="hero-scene hero-scene--side" aria-hidden="true">
+      <div class="hero-sky"></div>
+      <div class="hero-sun"></div>
+      <div class="hero-clouds hero-clouds--far"></div>
+      <div class="hero-clouds hero-clouds--near"></div>
+      <div class="hero-sea"></div>
+      <div class="hero-wave hero-wave--back"></div>
+      <div class="s3d s3d--side" data-s3d="side"><div class="s3d-in"><div class="s3d-bob"><img class="s3d-f" data-f="3" src="assets/ship3d-3.svg" alt="" width="1800" height="500" decoding="async"><img class="s3d-f" data-f="4" src="assets/ship3d-4.svg" alt="" width="1800" height="500" decoding="async"></div></div></div>
+      <div class="hero-wave hero-wave--mid"></div>
+      <div class="hero-wave hero-wave--front"></div>
+      <div class="hero-glints"><span style="left:8%;top:70%;--d:0s"></span><span style="left:22%;top:84%;--d:1.3s"></span><span style="left:37%;top:74%;--d:2.4s"></span><span style="left:51%;top:88%;--d:0.7s"></span><span style="left:63%;top:72%;--d:3.1s"></span><span style="left:74%;top:83%;--d:1.9s"></span><span style="left:86%;top:76%;--d:0.4s"></span><span style="left:93%;top:90%;--d:2.7s"></span><span style="left:45%;top:68%;--d:3.6s"></span></div>
+      <div class="hero-scrim"></div>
+    </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="hero-content">
+      <div class="max-w-xl">
+        <div class="mb-4"><span class="hero-free"><svg class="icon" aria-hidden="true" style="width:1rem;height:1rem"><use href="#i-award"/></svg>Primera edición 100% gratuita</span></div>
+        
         
         <!-- Kicker -->
         <p class="text-xs sm:text-sm font-mono font-bold tracking-wider text-amber-300 uppercase mb-3 flex items-center gap-2">
@@ -149,23 +136,23 @@
         </h1>
 
         <!-- Subtitle Adapted for General Public -->
-        <p class="mt-4 text-sm sm:text-base text-slate-200 font-normal leading-relaxed max-w-xl">
+        <p class="hero-lead mt-4 text-sm sm:text-base text-slate-200 font-normal leading-relaxed max-w-xl">
           Un día intensivo, seis módulos prácticos y la ruta oficial de diez pasos explicada de forma clara y sencilla. <strong>No requieres experiencia previa:</strong> ideal para emprendedores, comerciantes, productores, estudiantes y cualquier persona que desee aprender a vender y enviar productos al mundo.
         </p>
 
         <!-- Fact Badges Row -->
-        <div class="mt-7 grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3 rounded-2xl bg-ocean-950/60 backdrop-blur-md border border-white/15 text-left">
+        <div class="mt-7 hidden sm:grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3 rounded-2xl hero-facts border border-white/15 text-left">
           <div class="p-2">
             <div class="text-[10px] font-mono uppercase text-teal-300 font-bold">Modalidad</div>
             <div class="text-xs font-bold text-white mt-0.5">Presencial · sede por definir</div>
           </div>
           <div class="p-2 border-l border-white/10">
             <div class="text-[10px] font-mono uppercase text-teal-300 font-bold">Próxima Fecha</div>
-            <div class="text-xs font-bold text-amber-300 mt-0.5">Jue. 5 Nov, 2026</div>
+            <div class="text-xs font-bold text-amber-300 mt-0.5" data-fecha="corta">Por anunciar</div>
           </div>
           <div class="p-2 border-l border-white/10">
-            <div class="text-[10px] font-mono uppercase text-teal-300 font-bold">Horario</div>
-            <div class="text-xs font-bold text-white mt-0.5">6:00 p.m. · por confirmar</div>
+            <div class="text-[10px] font-mono uppercase text-teal-300 font-bold">Costo</div>
+            <div class="text-xs font-bold text-emerald-300 mt-0.5">Gratis · 1.ª edición</div>
           </div>
           <div class="p-2 border-l border-white/10">
             <div class="text-[10px] font-mono uppercase text-teal-300 font-bold">Nivel</div>
@@ -175,24 +162,18 @@
 
         <!-- CTA Buttons -->
         <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScn84gURqvDGxuDQjgawbleKznxOlFO-nxruaA_dk5CeyrjCA/viewform" target="_blank" rel="noopener" class="btn-teal px-8 py-3.5 rounded-lg text-sm font-bold inline-flex items-center gap-2 group shadow-lg">
-            <span>Inscribirme en el Formulario</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          <a href="#registro" class="btn-teal px-8 py-3.5 rounded-lg text-sm font-bold inline-flex items-center gap-2 group shadow-lg">
+            <span>Regístrate Gratis Ahora</span>
+            <svg class="icon w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"><use href="#i-arrow-right"/></svg>
           </a>
           <a href="#publico" class="px-6 py-3.5 rounded-lg text-sm font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all">
             ¿Es para mí?
           </a>
         </div>
-
+        </div>
       </div>
+      <a href="#publico" class="hero-cue" aria-label="Seguir bajando"><i></i><span>Desliza</span></a>
     </div>
-
-    <!-- Bottom Slider Indicator Dots (Naviera Navegando / Puerto Comercial) -->
-    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
-      <button class="hero-indicator-dot w-10 h-1.5 rounded-full bg-teal-400 transition-all cursor-pointer" title="Naviera navegando en alta mar"></button>
-      <button class="hero-indicator-dot w-6 h-1.5 rounded-full bg-white/40 hover:bg-white/70 transition-all cursor-pointer" title="Terminal portuario de contenedores"></button>
-    </div>
-
   </section>
 
   <!-- ================================================================= -->
@@ -202,7 +183,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
       <!-- Card 1: Desde Cero -->
-      <div class="floating-card rounded-2xl p-7 text-center flex flex-col justify-between items-center">
+      <div data-reveal class="floating-card rounded-2xl p-7 text-center flex flex-col justify-between items-center">
         <div class="w-16 h-16 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4">
           <svg class="w-9 h-9 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24">
             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
@@ -210,15 +191,15 @@
         </div>
         <h3 class="text-lg font-bold text-ocean-900 mb-2">Aprende Desde Cero</h3>
         <p class="text-xs text-slate-500 leading-relaxed mb-5">
-          Sin lenguaje enredado ni tecnicismos difíciles. Te explicamos los 10 pasos de Bancoex de forma 100% entendible.
+          Sin lenguaje enredado ni tecnicismos difíciles. Te explicamos los 10 pasos de la exportación de forma 100% entendible.
         </p>
         <a href="#modulos" class="btn-teal-sm">
-          <span>Ver temario</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          <span>Ver temario</span> <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-arrow-right"/></svg>
         </a>
       </div>
 
       <!-- Card 2: Para Todo Emprendedor -->
-      <div class="floating-card rounded-2xl p-7 text-center flex flex-col justify-between items-center">
+      <div data-reveal class="floating-card rounded-2xl p-7 text-center flex flex-col justify-between items-center">
         <div class="w-16 h-16 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4">
           <svg class="w-9 h-9 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24">
             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
@@ -231,12 +212,12 @@
           Emprendedores, artesanos, productores agrícolas, comerciantes, profesionales y curiosos del comercio.
         </p>
         <a href="#publico" class="btn-teal-sm">
-          <span>Conocer perfil</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          <span>Conocer perfil</span> <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-arrow-right"/></svg>
         </a>
       </div>
 
       <!-- Card 3: Certificado Oficial -->
-      <div class="floating-card rounded-2xl p-7 text-center flex flex-col justify-between items-center">
+      <div data-reveal class="floating-card rounded-2xl p-7 text-center flex flex-col justify-between items-center">
         <div class="w-16 h-16 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4">
           <svg class="w-9 h-9 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24">
             <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
@@ -247,13 +228,13 @@
         <p class="text-xs text-slate-500 leading-relaxed mb-5">
           Recibe tu diploma acreditativo de participación junto al cuaderno de trabajo y herramientas prácticas para ti.
         </p>
-        <a href="#inversion" class="btn-teal-sm">
-          <span>Ver cupos</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        <a href="#registro" class="btn-teal-sm">
+          <span>Inscribirme</span> <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-arrow-right"/></svg>
         </a>
       </div>
 
       <!-- Card 4: Casos Prácticos Reales -->
-      <div class="floating-card rounded-2xl p-7 text-center flex flex-col justify-between items-center">
+      <div data-reveal class="floating-card rounded-2xl p-7 text-center flex flex-col justify-between items-center">
         <div class="w-16 h-16 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4">
           <svg class="w-9 h-9 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10"/>
@@ -265,8 +246,8 @@
         <p class="text-xs text-slate-500 leading-relaxed mb-5">
           Sesión de preguntas abiertas para que aclares dudas concretas sobre cómo exportar tu producto o idea.
         </p>
-        <a href="#inversion" class="btn-teal-sm">
-          <span>Cupo VIP</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        <a href="#faq" class="btn-teal-sm">
+          <span>Resolver dudas</span> <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-arrow-right"/></svg>
         </a>
       </div>
 
@@ -279,7 +260,7 @@
   <section id="publico" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div data-reveal class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-200">
           Inclusivo & Práctico
         </span>
@@ -296,7 +277,7 @@
         <!-- Perfil 1 -->
         <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-teal-500 transition-colors">
           <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4">
-            <i data-lucide="lightbulb" class="w-6 h-6"></i>
+            <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-lightbulb"/></svg>
           </div>
           <h3 class="text-base font-bold text-ocean-900 mb-2">Emprendedores y Pequeños Negocios</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
@@ -307,7 +288,7 @@
         <!-- Perfil 2 -->
         <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-teal-500 transition-colors">
           <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-4">
-            <i data-lucide="sprout" class="w-6 h-6"></i>
+            <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-sprout"/></svg>
           </div>
           <h3 class="text-base font-bold text-ocean-900 mb-2">Productores y Fabricantes</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
@@ -318,7 +299,7 @@
         <!-- Perfil 3 -->
         <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-teal-500 transition-colors">
           <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-4">
-            <i data-lucide="briefcase" class="w-6 h-6"></i>
+            <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-briefcase"/></svg>
           </div>
           <h3 class="text-base font-bold text-ocean-900 mb-2">Comerciantes y Profesionales</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
@@ -329,7 +310,7 @@
         <!-- Perfil 4 -->
         <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-teal-500 transition-colors">
           <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mb-4">
-            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-graduation-cap"/></svg>
           </div>
           <h3 class="text-base font-bold text-ocean-900 mb-2">Estudiantes y Curiosos</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
@@ -351,19 +332,19 @@
         
         <div class="flex items-center gap-3.5">
           <div class="w-11 h-11 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
-            <i data-lucide="anchor" class="w-6 h-6"></i>
+            <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-anchor"/></svg>
           </div>
           <div>
             <div class="flex items-center gap-2">
               <h3 class="text-sm font-bold text-ocean-900 uppercase tracking-wider">Zarpamos en</h3>
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Fecha Confirmada</span>
+              <span id="cd-badge" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Próximamente</span>
             </div>
-            <p id="countdown-status" class="text-xs text-slate-500 mt-0.5">Jueves 5 de Noviembre, 2026 • 6:00 p.m. (Hora de Venezuela)</p>
+            <p id="countdown-status" class="text-xs text-slate-500 mt-0.5" data-fecha="larga">Fecha por anunciar</p>
           </div>
         </div>
 
         <!-- Digits -->
-        <div class="grid grid-cols-4 gap-3 text-center">
+        <div id="cd-grid" class="grid grid-cols-4 gap-3 text-center">
           <div class="bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 min-w-[68px]">
             <div id="cd-days" class="text-2xl font-mono font-bold text-ocean-900">--</div>
             <div class="text-[10px] text-slate-400 uppercase font-semibold mt-0.5">Días</div>
@@ -398,10 +379,10 @@
           <div class="route-diagram-box p-6 bg-slate-50/70 border border-slate-200 rounded-3xl">
             <div class="flex items-center justify-between pb-4 border-b border-slate-200 mb-4">
               <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-                <i data-lucide="navigation" class="w-4 h-4"></i> Rutas Estratégicas de Exportación
+                <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-navigation"/></svg> Rutas Estratégicas de Exportación
               </span>
               <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white border border-slate-200 text-slate-600">
-                10 Pasos Bancoex
+                10 Pasos
               </span>
             </div>
 
@@ -448,7 +429,7 @@
 
             <div class="flex items-center justify-between pt-3 border-t border-slate-200 text-[11px] font-mono text-slate-500">
               <span>Rutas marítimas y aéreas explicadas paso a paso</span>
-              <span class="text-teal-700 font-bold">10 Pasos Bancoex</span>
+              <span class="text-teal-700 font-bold">10 Pasos</span>
             </div>
           </div>
         </div>
@@ -469,7 +450,7 @@
           <div class="mt-6 space-y-4">
             <div class="flex items-start gap-3.5">
               <div class="w-10 h-10 rounded-xl border border-teal-500/30 bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
-                <i data-lucide="check" class="w-5 h-5"></i>
+                <svg class="icon w-5 h-5" aria-hidden="true"><use href="#i-check"/></svg>
               </div>
               <div>
                 <h3 class="text-sm font-bold text-ocean-900">Aprende qué pide cada país</h3>
@@ -479,7 +460,7 @@
 
             <div class="flex items-start gap-3.5">
               <div class="w-10 h-10 rounded-xl border border-teal-500/30 bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
-                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                <svg class="icon w-5 h-5" aria-hidden="true"><use href="#i-shield-check"/></svg>
               </div>
               <div>
                 <h3 class="text-sm font-bold text-ocean-900">Evita errores comunes</h3>
@@ -491,7 +472,7 @@
           <div class="mt-8">
             <a href="#modulos" class="btn-teal px-7 py-3 rounded-lg text-xs font-bold inline-flex items-center gap-2">
               <span>Ver los 6 Módulos Prácticos</span>
-              <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+              <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-arrow-down"/></svg>
             </a>
           </div>
         </div>
@@ -506,7 +487,7 @@
   <section id="modulos" class="py-24 bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div data-reveal class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-200">
           El Temario Completo
         </span>
@@ -514,7 +495,7 @@
           Seis Módulos, Una Sola Ruta Clara
         </h2>
         <p class="mt-3 text-slate-500 text-sm sm:text-base">
-          Desglosamos el flujograma oficial de diez pasos de Bancoex de manera didáctica, desde tu idea inicial hasta el cobro seguro en tu cuenta bancaria.
+          Desglosamos el flujograma oficial de diez pasos de Emcoex de manera didáctica, desde tu idea inicial hasta el cobro seguro en tu cuenta bancaria.
         </p>
       </div>
 
@@ -522,7 +503,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Mod 01 -->
-        <div class="floating-card rounded-2xl p-7 flex flex-col justify-between">
+        <div data-reveal class="floating-card rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="text-xs font-mono font-bold text-amber-600 uppercase tracking-wider mb-2">Módulo 01</div>
             <h3 class="text-base font-bold text-ocean-900 mb-2">¿Tu Producto está Listo para Exportar?</h3>
@@ -531,13 +512,13 @@
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Paso 1 y 2 Bancoex</span>
+            <span>Paso 1 y 2</span>
             <span class="text-teal-600 font-bold">Diagnóstico Fácil</span>
           </div>
         </div>
 
         <!-- Mod 02 -->
-        <div class="floating-card rounded-2xl p-7 flex flex-col justify-between">
+        <div data-reveal class="floating-card rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="text-xs font-mono font-bold text-amber-600 uppercase tracking-wider mb-2">Módulo 02</div>
             <h3 class="text-base font-bold text-ocean-900 mb-2">Cómo Negociar y los Incoterms 2020</h3>
@@ -546,13 +527,13 @@
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Paso 3 y 4 Bancoex</span>
+            <span>Paso 3 y 4</span>
             <span class="text-teal-600 font-bold">Contratos Claros</span>
           </div>
         </div>
 
         <!-- Mod 03 -->
-        <div class="floating-card rounded-2xl p-7 flex flex-col justify-between">
+        <div data-reveal class="floating-card rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="text-xs font-mono font-bold text-amber-600 uppercase tracking-wider mb-2">Módulo 03</div>
             <h3 class="text-base font-bold text-ocean-900 mb-2">Permisos y Documentos sin Complicaciones</h3>
@@ -561,13 +542,13 @@
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Paso 5 Bancoex</span>
+            <span>Paso 5</span>
             <span class="text-teal-600 font-bold">Leyes al Día</span>
           </div>
         </div>
 
         <!-- Mod 04 -->
-        <div class="floating-card rounded-2xl p-7 flex flex-col justify-between">
+        <div data-reveal class="floating-card rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="text-xs font-mono font-bold text-amber-600 uppercase tracking-wider mb-2">Módulo 04</div>
             <h3 class="text-base font-bold text-ocean-900 mb-2">Empaque, Logística y Transporte</h3>
@@ -576,13 +557,13 @@
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Paso 6 y 7 Bancoex</span>
+            <span>Paso 6 y 7</span>
             <span class="text-teal-600 font-bold">Embalaje Seguro</span>
           </div>
         </div>
 
         <!-- Mod 05 -->
-        <div class="floating-card rounded-2xl p-7 flex flex-col justify-between">
+        <div data-reveal class="floating-card rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="text-xs font-mono font-bold text-amber-600 uppercase tracking-wider mb-2">Módulo 05</div>
             <h3 class="text-base font-bold text-ocean-900 mb-2">El Despacho Aduanero sin Miedo</h3>
@@ -591,13 +572,13 @@
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Paso 8 y 9 Bancoex</span>
+            <span>Paso 8 y 9</span>
             <span class="text-teal-600 font-bold">Aduana Fácil</span>
           </div>
         </div>
 
         <!-- Mod 06 -->
-        <div class="floating-card rounded-2xl p-7 flex flex-col justify-between">
+        <div data-reveal class="floating-card rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="text-xs font-mono font-bold text-amber-600 uppercase tracking-wider mb-2">Módulo 06</div>
             <h3 class="text-base font-bold text-ocean-900 mb-2">Cómo Cobrar y tu Plan de Acción</h3>
@@ -606,7 +587,7 @@
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Paso 10 Bancoex</span>
+            <span>Paso 10</span>
             <span class="text-teal-600 font-bold">Cierre y Cobro</span>
           </div>
         </div>
@@ -637,15 +618,15 @@
           <div class="pt-6 grid grid-cols-3 gap-6 border-t border-white/20 max-w-lg">
             <div class="space-y-1">
               <div class="text-teal-200">
-                <i data-lucide="calendar" class="w-6 h-6"></i>
+                <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-calendar"/></svg>
               </div>
               <div class="text-xs font-semibold text-teal-100 uppercase tracking-wider">Fecha</div>
-              <div class="text-2xl sm:text-3xl font-black text-white">5 Nov</div>
+              <div class="text-2xl sm:text-3xl font-black text-white" data-fecha="dia">Pronto</div>
             </div>
 
             <div class="space-y-1">
               <div class="text-teal-200">
-                <i data-lucide="check-circle" class="w-6 h-6"></i>
+                <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-check-circle"/></svg>
               </div>
               <div class="text-xs font-semibold text-teal-100 uppercase tracking-wider">Metodología</div>
               <div class="text-2xl sm:text-3xl font-black text-white">10 Pasos</div>
@@ -653,7 +634,7 @@
 
             <div class="space-y-1">
               <div class="text-teal-200">
-                <i data-lucide="award" class="w-6 h-6"></i>
+                <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-award"/></svg>
               </div>
               <div class="text-xs font-semibold text-teal-100 uppercase tracking-wider">Requisitos</div>
               <div class="text-2xl sm:text-3xl font-black text-white">Cero</div>
@@ -664,7 +645,7 @@
         <div class="lg:col-span-5 flex justify-center">
           <div class="w-full max-w-sm rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-ocean-950/50 backdrop-blur-md p-5 text-center">
             <div class="h-44 rounded-xl overflow-hidden relative mb-4">
-              <img src="assets/puerto-comercial.jpg" alt="Terminal portuario de contenedores y grúas de carga" class="w-full h-full object-cover">
+              <img src="assets/puerto.svg" loading="lazy" decoding="async" alt="Terminal portuario de contenedores y grúas de carga" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-teal-900/30 mix-blend-multiply"></div>
             </div>
             <div class="text-sm font-bold text-white">¡El Mundo Espera por tu Producto!</div>
@@ -682,7 +663,7 @@
   <section id="cronograma" class="py-24 bg-white border-b border-slate-200">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
         <span class="text-xs font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-200">
           Fechas del Programa
         </span>
@@ -690,7 +671,7 @@
           Cronograma de la Jornada
         </h2>
         <p class="mt-2 text-slate-500 text-sm">
-          Fecha confirmada para el jueves 5 de noviembre de 2026.
+          Próxima jornada: <span data-fecha="larga">Fecha por anunciar</span>.
         </p>
       </div>
 
@@ -701,23 +682,22 @@
           
           <div class="relative">
             <div class="absolute -left-[31px] top-0 w-3.5 h-3.5 rounded-full bg-slate-300 border-2 border-white"></div>
-            <div class="text-xs font-mono font-bold text-slate-500">Mar. 15 de septiembre, 2026</div>
+            <div class="text-xs font-mono font-bold text-slate-500">Inscripciones abiertas</div>
             <h4 class="text-sm font-bold text-ocean-900 mt-0.5">Apertura de inscripciones</h4>
-            <p class="text-xs text-slate-500 mt-1">Se habilita el formulario de inscripción y el pago del cupo.</p>
+            <p class="text-xs text-slate-500 mt-1">Completa el formulario y asegura tu lugar en la primera edición gratuita.</p>
           </div>
 
           <div class="relative">
             <div class="absolute -left-[31px] top-0 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white"></div>
-            <div class="text-xs font-mono font-bold text-amber-600">Vie. 2 de octubre, 2026</div>
+            <div class="text-xs font-mono font-bold text-amber-600">Antes de la jornada</div>
             <h4 class="text-sm font-bold text-ocean-900 mt-0.5">Cierre de inscripciones</h4>
-            <p class="text-xs text-slate-500 mt-1">Fecha límite para consignar comprobante o agotar cupos disponibles.</p>
+            <p class="text-xs text-slate-500 mt-1">Las inscripciones cierran cuando se completan los cupos disponibles.</p>
           </div>
 
           <div class="relative">
             <div class="absolute -left-[31px] top-0 w-3.5 h-3.5 rounded-full bg-teal-500 border-2 border-white ring-4 ring-teal-100"></div>
             <div class="text-xs font-mono font-bold text-teal-700 flex items-center gap-2">
-              Jue. 5 de noviembre, 2026
-              <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.2 rounded-full font-sans font-bold">Confirmada</span>
+              <span data-fecha="corta">Por anunciar</span>
             </div>
             <h4 class="text-sm font-bold text-ocean-900 mt-0.5">Día del Taller Presencial</h4>
             <p class="text-xs text-slate-500 mt-1">Inicia 6:00 p.m. con los seis módulos didácticos, recesos y refrigerio. Sede informada a inscritos.</p>
@@ -725,7 +705,7 @@
 
           <div class="relative">
             <div class="absolute -left-[31px] top-0 w-3.5 h-3.5 rounded-full bg-slate-300 border-2 border-white"></div>
-            <div class="text-xs font-mono font-bold text-slate-500">Vie. 16 de noviembre, 2026</div>
+            <div class="text-xs font-mono font-bold text-slate-500">Después de la jornada</div>
             <h4 class="text-sm font-bold text-ocean-900 mt-0.5">Entrega de certificados</h4>
             <p class="text-xs text-slate-500 mt-1">Envío del certificado de participación oficial a cada asistente.</p>
           </div>
@@ -765,7 +745,7 @@
             </div>
             <div class="p-3.5 flex items-center justify-between bg-teal-50 text-teal-800 font-semibold">
               <span class="font-mono text-teal-700">—</span>
-              <span>Refrigerio (Cortesía Cupo VIP)</span>
+              <span>Refrigerio</span>
             </div>
             <div class="p-3.5 flex items-center justify-between">
               <span class="font-mono text-slate-400">—</span>
@@ -798,10 +778,24 @@
   <!-- ================================================================= -->
   <!-- 10. SECTION: INVERSIÓN (US$ 65 / US$ 80) & MÉTODOS DE PAGO        -->
   <!-- ================================================================= -->
-  <section id="inversion" class="py-24 bg-slate-50">
+  <section id="patrocinadores" class="sponsors" aria-labelledby="spons-title">
+    <div class="sponsors-head" data-reveal>
+      <span class="sponsors-kicker">Aliados &amp; patrocinadores</span>
+      <h2 id="spons-title">Nuestros <span>patrocinadores</span></h2>
+      <p>Marcas y productos que ya han probado el taller o han navegado con nosotros. Gracias a su apoyo llevamos la ruta de exportación a más emprendedores.</p>
+    </div>
+    <div class="marquee" style="--dur:56s"><div class="marquee-track"><figure class="sponsor-card"><img src="assets/sponsors/cafe.svg" alt="Bolsa de café — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Café de origen</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/cacao.svg" alt="Cacao y chocolate — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Cacao y chocolate</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/miel.svg" alt="Frasco de miel — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Miel y conservas</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/artesania.svg" alt="Cerámica artesanal — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Artesanía local</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/frutas.svg" alt="Caja de frutas — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Frutas tropicales</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/textil.svg" alt="Telas y textiles — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Textiles y fibras</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/licor.svg" alt="Botella de ron — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Ron y destilados</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/contenedor.svg" alt="Contenedor marítimo — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Logística y carga</strong><small>Tu marca aquí</small></figcaption></figure></div></div>
+    <div class="marquee marquee--rev" style="--dur:64s"><div class="marquee-track"><figure class="sponsor-card"><img src="assets/sponsors/frutas.svg" alt="Caja de frutas — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Frutas tropicales</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/textil.svg" alt="Telas y textiles — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Textiles y fibras</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/licor.svg" alt="Botella de ron — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Ron y destilados</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/contenedor.svg" alt="Contenedor marítimo — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Logística y carga</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/cafe.svg" alt="Bolsa de café — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Café de origen</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/cacao.svg" alt="Cacao y chocolate — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Cacao y chocolate</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/miel.svg" alt="Frasco de miel — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Miel y conservas</strong><small>Tu marca aquí</small></figcaption></figure><figure class="sponsor-card"><img src="assets/sponsors/artesania.svg" alt="Cerámica artesanal — espacio para patrocinador" width="400" height="300" loading="lazy" decoding="async"><figcaption><span class="sponsor-tag">Patrocinador</span><strong>Artesanía local</strong><small>Tu marca aquí</small></figcaption></figure></div></div>
+    <div class="sponsors-cta">
+      ¿Quieres que tu marca navegue con nosotros?<br>
+      <a href="mailto:info.venezuelaexporta@gmail.com?subject=Quiero%20patrocinar%20el%20taller"><span>Ser patrocinador</span><svg class="icon" aria-hidden="true" style="width:1rem;height:1rem"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </section>
+
+  <section id="inversion" data-pagos class="py-24 bg-slate-50">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
         <span class="text-xs font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-200">
           Inversión al Alcance de Todos
         </span>
@@ -830,19 +824,19 @@
             
             <ul class="space-y-3 text-xs text-slate-600 border-t border-slate-100 pt-6">
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span>Acceso completo a los 6 módulos didácticos</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span>Cuaderno del alumno en formato digital (PDF)</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span>Herramientas y plantillas digitales del curso</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span>Certificado oficial de participación digital</span>
               </li>
             </ul>
@@ -873,27 +867,27 @@
             
             <ul class="space-y-3 text-xs text-slate-700 border-t border-slate-100 pt-6">
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span class="font-bold">Todo lo incluido en Cupo General</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span>Cuaderno del alumno y certificado en versión física impresa</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span class="font-semibold text-ocean-900">Refrigerio incluido durante la jornada</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span>Asientos preferenciales en primeras filas</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span class="font-bold text-teal-700">Asesoría personalizada para tu caso o producto</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-teal-500 shrink-0"></i>
+                <svg class="icon w-4 h-4 text-teal-500 shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
                 <span>Kit de invitado exclusivo</span>
               </li>
             </ul>
@@ -909,7 +903,7 @@
       </div>
 
       <!-- Payment Methods Cards -->
-      <div class="text-center mb-6">
+      <div data-reveal class="text-center mb-6">
         <h3 class="text-sm font-mono uppercase tracking-wider text-slate-500 font-bold">
           Formas de Pago Fáciles
         </h3>
@@ -930,7 +924,7 @@
           <div class="text-xs font-mono font-bold text-teal-700 uppercase">Pago Móvil</div>
           <div class="text-xs text-ocean-900 mt-2 space-y-1">
             <p><strong>Banco:</strong> [Código bancario]</p>
-            <p><strong>Teléfono:</strong> 0412-000-0000</p>
+            <p><strong>Teléfono:</strong> 0424-526-4461</p>
             <p><strong>Cédula / RIF:</strong> V-00.000.000</p>
           </div>
           <span class="inline-block mt-3 text-[10px] font-mono text-slate-400 uppercase">Inmediato y sin comisiones</span>
@@ -955,60 +949,45 @@
   <section id="registro" class="py-24 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- 3 Steps -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-10">
         <span class="text-xs font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-200">
-          Inscripción Sencilla
+          Inscripciones abiertas · 100% gratis
         </span>
-        <h2 class="mt-4 text-3xl font-black text-ocean-900 tracking-tight">
-          Tres Pasos para Asegurar tu Cupo
+        <h2 class="mt-4 text-3xl sm:text-4xl font-black text-ocean-900 tracking-tight">
+          ¡Regístrate Ya y Asegura tu Cupo!
         </h2>
+        <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+          Completa el formulario y recibe al instante tu pase de acceso digital para el primer taller oficial y gratuito de Venezuela Exporta.
+        </p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-          <div class="text-3xl font-mono font-bold text-teal-600">01</div>
-          <h3 class="text-sm font-bold text-ocean-900 mt-2">Realiza tu pago</h3>
-          <p class="text-xs text-slate-500 mt-1">Transfiere el monto ($65 o $80) por Pago Móvil, transferencia bancaria nacional o Zelle, y guarda tu referencia.</p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-          <div class="text-3xl font-mono font-bold text-teal-600">02</div>
-          <h3 class="text-sm font-bold text-ocean-900 mt-2">Completa el formulario</h3>
-          <p class="text-xs text-slate-500 mt-1">Ingresa tus datos personales y tu número de comprobante para registrar tu asistencia.</p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-          <div class="text-3xl font-mono font-bold text-teal-600">03</div>
-          <h3 class="text-sm font-bold text-ocean-900 mt-2">Recibe la confirmación</h3>
-          <p class="text-xs text-slate-500 mt-1">Te confirmamos por correo y WhatsApp con la ubicación exacta de la sede y recomendaciones para el día del taller.</p>
-        </div>
-      </div>
-
-      <!-- Google Forms CTA Box -->
-      <div class="p-8 rounded-3xl bg-ocean-950 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl mb-12">
+      <!-- Google Forms CTA Box (oculto en v3: ver SITE.googleFormActivo en js/config.js) -->
+      <div data-gform class="p-8 rounded-3xl bg-ocean-950 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl mb-12">
         <div>
           <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-teal-400 uppercase tracking-wider mb-2">
-            <i data-lucide="check-circle" class="w-4 h-4"></i> Formulario Oficial de Google
+            <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-check-circle"/></svg> Formulario Oficial de Google
           </div>
           <h3 class="text-xl font-bold">Inscripción directa al taller</h3>
           <p class="text-xs text-slate-300 mt-1 max-w-lg">
-            Si ya tienes tu pago listo, puedes ingresar directo a nuestro formulario en Google Forms para adjuntar tu comprobante de pago en foto o PDF.
+            Inscríbete directo en nuestro formulario de Google Forms. Es gratuito y toma menos de dos minutos.
           </p>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScn84gURqvDGxuDQjgawbleKznxOlFO-nxruaA_dk5CeyrjCA/viewform" target="_blank" rel="noopener" class="whitespace-nowrap btn-teal px-7 py-3.5 rounded-xl font-bold text-xs flex items-center gap-2">
           <span>Abrir Google Form</span>
-          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-external-link"/></svg>
         </a>
       </div>
 
       <!-- In-Page Registration Card with Digital Pass Generator -->
-      <div id="registration-card" class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-lg relative">
-        <div class="text-center max-w-xl mx-auto mb-8">
-          <h3 class="text-xl font-black text-ocean-900">Pre-Registro y Pase Digital Inmediato</h3>
-          <p class="text-xs text-slate-500 mt-1">
-            Genera al instante tu acreditación digital con código de confirmación.
-          </p>
+      <div id="registration-card" class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl relative">
+        <div class="reg-banner">
+          <span class="reg-badge"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>Primer taller oficial · Gratuito</span>
+          <h3>¡Regístrate ya!</h3>
+          <p>Completa tus datos y obtén al instante tu pase digital con código de confirmación.</p>
+          <ul class="reg-perks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>100% gratis</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Pase digital inmediato</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Certificado de participación</li>
+          </ul>
         </div>
 
         <form id="registration-form" class="space-y-4 text-xs">
@@ -1033,14 +1012,14 @@
 
             <div>
               <label for="reg-phone" class="block font-bold text-ocean-900 uppercase mb-1">Teléfono / WhatsApp *</label>
-              <input type="tel" id="reg-phone" required placeholder="0412-000-0000" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-ocean-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
+              <input type="tel" id="reg-phone" required placeholder="Ej. 0414-000-0000" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-ocean-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="reg-state" class="block font-bold text-ocean-900 uppercase mb-1">Estado de Procedencia *</label>
-              <input type="text" id="reg-state" required placeholder="Ej. Miranda / Carabobo / Dtto. Capital" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-ocean-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
+              <input type="text" id="reg-state" required placeholder="Ej. Lara / Carabobo / Dtto. Capital" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-ocean-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
             </div>
 
             <div>
@@ -1049,7 +1028,7 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div data-pagos class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="reg-plan" class="block font-bold text-ocean-900 uppercase mb-1">Modalidad de Cupo *</label>
               <select id="reg-plan" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-ocean-900 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
@@ -1066,14 +1045,44 @@
 
           <div class="pt-2">
             <button type="submit" class="btn-teal w-full py-4 px-6 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
-              <i data-lucide="ticket" class="w-5 h-5"></i>
-              <span>Emitir Acreditación Digital y Registrar Cupo</span>
+              <svg class="icon w-5 h-5" aria-hidden="true"><use href="#i-ticket"/></svg>
+              <span>Registrarme y Obtener mi Pase</span>
             </button>
           </div>
 
         </form>
       </div>
 
+    
+      <!-- 3 Steps -->
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-10 mt-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-200">
+          En tres pasos
+        </span>
+        <h2 class="mt-4 text-3xl font-black text-ocean-900 tracking-tight">
+          Así de Fácil es Asegurar tu Lugar
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="text-3xl font-mono font-bold text-teal-600">01</div>
+          <h3 class="text-sm font-bold text-ocean-900 mt-2">Completa tu inscripción</h3>
+          <p class="text-xs text-slate-500 mt-1">Llena el formulario de registro de esta página con tus datos. Es gratis.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="text-3xl font-mono font-bold text-teal-600">02</div>
+          <h3 class="text-sm font-bold text-ocean-900 mt-2">Genera tu pase digital</h3>
+          <p class="text-xs text-slate-500 mt-1">Obtén al instante tu acreditación con código de confirmación para presentar el día del taller.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="text-3xl font-mono font-bold text-teal-600">03</div>
+          <h3 class="text-sm font-bold text-ocean-900 mt-2">Recibe la confirmación</h3>
+          <p class="text-xs text-slate-500 mt-1">Te confirmamos por correo y WhatsApp con la ubicación exacta de la sede y recomendaciones para el día del taller.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1086,16 +1095,16 @@
       
       <!-- Close Button -->
       <button id="close-modal-btn" class="no-print absolute top-4 right-4 p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors z-20">
-        <i data-lucide="x" class="w-5 h-5"></i>
+        <svg class="icon w-5 h-5" aria-hidden="true"><use href="#i-x"/></svg>
       </button>
 
       <!-- Badge Header -->
       <div class="ticket-badge-light p-6 text-center text-white border-b border-ocean-800">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-[10px] font-mono font-bold uppercase tracking-wider mb-2">
-          <i data-lucide="award" class="w-3.5 h-3.5"></i> Acreditación Confirmada
+          <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-award"/></svg> Acreditación Confirmada
         </div>
         <h3 class="text-xl font-black tracking-wide">VENEZUELA EXPORTA</h3>
-        <p class="text-xs text-slate-300 mt-0.5">Taller de Exportación • Jueves 5 Nov 2026</p>
+        <p class="text-xs text-slate-300 mt-0.5">Taller de Exportación • <span data-fecha="corta">Por anunciar</span></p>
       </div>
 
       <!-- Ticket Body -->
@@ -1111,7 +1120,7 @@
             <div class="flex items-center gap-3 text-xs text-slate-500 mt-0.5">
               <span id="ticket-attendee-doc">C.I. V-00.000.000</span>
               <span>•</span>
-              <span id="ticket-attendee-state">Caracas</span>
+              <span id="ticket-attendee-state">Lara</span>
             </div>
             <div id="ticket-attendee-email" class="text-xs text-slate-400">email@correo.com</div>
           </div>
@@ -1121,7 +1130,7 @@
               <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">Ocupación / Proyecto</div>
               <div id="ticket-attendee-company" class="text-xs font-semibold text-ocean-900 truncate">Emprendedor / Particular</div>
             </div>
-            <div>
+            <div data-pagos>
               <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">Soporte Pago</div>
               <div id="ticket-ref" class="text-xs font-mono font-semibold text-ocean-900 truncate">Ref: Pendiente</div>
             </div>
@@ -1130,7 +1139,7 @@
           <div class="grid grid-cols-2 gap-4 pt-2 border-t border-slate-100">
             <div>
               <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">Modalidad</div>
-              <div id="ticket-pass-type" class="text-xs font-bold text-teal-600">Cupo VIP ($80)</div>
+              <div id="ticket-pass-type" class="text-xs font-bold text-teal-600">Cupo gratuito</div>
             </div>
             <div>
               <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">Código Acreditación</div>
@@ -1165,7 +1174,7 @@
       <!-- Modal Actions -->
       <div class="no-print p-4 bg-slate-50 border-t border-slate-200 flex gap-3">
         <button id="print-ticket-btn" class="btn-teal flex-1 py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
-          <i data-lucide="printer" class="w-4 h-4"></i> Imprimir / Guardar PDF
+          <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-printer"/></svg> Imprimir / Guardar PDF
         </button>
         <button onclick="document.getElementById('close-modal-btn').click()" class="py-2.5 px-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs">
           Cerrar
@@ -1182,7 +1191,7 @@
   <section id="faq" class="py-24 bg-slate-50 border-t border-slate-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-14">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-14">
         <span class="text-xs font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-200">
           Dudas Comunes
         </span>
@@ -1196,54 +1205,53 @@
 
       <div class="space-y-3.5">
         
-        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div data-reveal class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
           <button class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
             <span class="font-bold text-ocean-900 text-sm">¿Necesito tener experiencia previa o una empresa registrada para asistir?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0"></i>
+            <svg class="icon faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0" aria-hidden="true"><use href="#i-chevron-down"/></svg>
           </button>
           <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
             ¡Para nada! El taller está diseñado precisamente para explicarlo todo desde cero y de forma sencilla. Tanto si ya tienes un producto fabricado, como si apenas tienes una idea o eres un estudiante o curioso que desea aprender cómo funciona el comercio exterior, este taller es ideal para ti.
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div data-reveal class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
           <button class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
             <span class="font-bold text-ocean-900 text-sm">¿Cómo y cuándo se anuncia la sede presencial?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0"></i>
+            <svg class="icon faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0" aria-hidden="true"><use href="#i-chevron-down"/></svg>
           </button>
           <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
             La sede presencial (en una zona céntrica, accesible y con estacionamiento seguro) se informará por correo electrónico y WhatsApp directamente a los participantes inscritos con suficiente anticipación para su traslado.
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div data-pagos class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
           <button class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
             <span class="font-bold text-ocean-900 text-sm">¿Puedo pagar en Bolívares por Pago Móvil o Transferencia?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0"></i>
+            <svg class="icon faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0" aria-hidden="true"><use href="#i-chevron-down"/></svg>
           </button>
           <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
             Sí. Puedes cancelar en Bolívares mediante Pago Móvil o Transferencia bancaria nacional a la tasa oficial del Banco Central de Venezuela (BCV) del día de la operación, o en divisas mediante Zelle.
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div data-pagos class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
           <button class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
             <span class="font-bold text-ocean-900 text-sm">¿Qué diferencia el Cupo VIP del General?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0"></i>
+            <svg class="icon faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0" aria-hidden="true"><use href="#i-chevron-down"/></svg>
           </button>
           <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
             El cupo VIP está limitado a 30 personas e incluye cuaderno de trabajo y certificado en formato físico impreso, refrigerio completo durante los recesos, asientos preferenciales en primera fila, asesoría personalizada para tu producto o idea y kit de invitado.
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div data-reveal class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
           <button class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
             <span class="font-bold text-ocean-900 text-sm">¿Recibiré un certificado al finalizar?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0"></i>
+            <svg class="icon faq-icon w-5 h-5 text-teal-500 transition-transform duration-300 shrink-0" aria-hidden="true"><use href="#i-chevron-down"/></svg>
           </button>
           <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
-            Sí. Todos los asistentes con pago verificado y asistencia a la jornada recibirán su Certificado Oficial de Participación (en formato digital para Cupo General y en formato impreso especial para Cupo VIP).
-          </div>
+            Sí. Todos los asistentes que participen en la jornada recibirán su Certificado Oficial de Participación en formato digital.</div>
         </div>
 
       </div>
@@ -1254,6 +1262,36 @@
   <!-- ================================================================= -->
   <!-- 14. FOOTER                                                        -->
   <!-- ================================================================= -->
+  <!-- ================================================================= -->
+  <!-- CONTÁCTANOS                                                       -->
+  <!-- ================================================================= -->
+  <section id="contacto" class="contact" aria-labelledby="contact-title">
+    <div class="contact-inner">
+      <div data-reveal class="contact-head">
+        <span class="contact-kicker">Contáctanos</span>
+        <h2 id="contact-title">¿Tienes dudas? <span>Estamos para ayudarte</span></h2>
+        <p>A través de nuestros canales regulares de información y soporte, escríbenos y resolvemos cualquier consulta sobre el taller.</p>
+      </div>
+      <div class="contact-grid">
+        <a data-reveal class="contact-card" href="mailto:info.venezuelaexporta@gmail.com">
+          <span class="contact-ico"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+          <span class="contact-label">Correo electrónico</span>
+          <strong class="contact-value">info.venezuelaexporta@gmail.com</strong>
+          <span class="contact-hint">Consultas e información general del taller</span>
+          <span class="contact-cta">Escribir un correo <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </a>
+        <a data-reveal class="contact-card contact-card--wa" href="https://wa.me/584245264461?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20taller%20Venezuela%20Exporta" target="_blank" rel="noopener">
+          <span class="contact-ico"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+          <span class="contact-label">WhatsApp · Soporte oficial</span>
+          <strong class="contact-value">0424-526-4461</strong>
+          <span class="contact-hint">Atención directa para resolver tus preguntas</span>
+          <span class="contact-cta">Abrir WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </a>
+      </div>
+      <p class="contact-loc"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>El taller se dicta en Barquisimeto, Venezuela</p>
+    </div>
+  </section>
+
   <footer class="bg-ocean-950 text-slate-300 text-xs pt-16 pb-12 border-t border-ocean-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -1262,18 +1300,14 @@
         <!-- Brand & Description -->
         <div class="space-y-3">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white font-bold">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4z"/>
-              </svg>
-            </div>
+            <div class="flag-tile flag-tile--sm w-8 h-8"><svg class="flag-svg" aria-hidden="true"><use href="#flag-ve"/></svg></div>
             <span class="text-base font-black text-white tracking-wide">Venezuela<span class="text-teal-400">Exporta</span></span>
           </div>
           <p class="text-slate-400 leading-relaxed text-[11px]">
             Taller Práctico de Comercio Exterior abierto a todo público. La ruta oficial de diez pasos para exportar desde Venezuela explicada desde cero.
           </p>
           <div class="text-[11px] text-slate-500">
-            © 2026 Venezuela Exporta. Todos los derechos reservados.
+            © <span data-year>2026</span> Venezuela Exporta. Todos los derechos reservados.
           </div>
         </div>
 
@@ -1285,7 +1319,9 @@
             <li><a href="#publico" class="hover:text-teal-400 transition-colors">¿Para Quién Es?</a></li>
             <li><a href="#modulos" class="hover:text-teal-400 transition-colors">Los 6 Módulos</a></li>
             <li><a href="#rutas" class="hover:text-teal-400 transition-colors">Rutas de Exportación</a></li>
-            <li><a href="#inversion" class="hover:text-teal-400 transition-colors">Inversión & Pases</a></li>
+            <li data-pagos><a href="#inversion" class="hover:text-teal-400 transition-colors">Inversión & Pases</a></li>
+            <li><a href="#registro" class="hover:text-teal-400 transition-colors">Regístrate</a></li>
+            <li><a href="#contacto" class="hover:text-teal-400 transition-colors">Contáctanos</a></li>
           </ul>
         </div>
 
@@ -1294,16 +1330,16 @@
           <div class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-3">Contacto Oficial</div>
           <ul class="space-y-2.5 text-slate-400 text-xs">
             <li class="flex items-center gap-2">
-              <i data-lucide="mail" class="w-3.5 h-3.5 text-teal-400"></i>
-              <span>info@venezuelaexporta.com</span>
+              <svg class="icon w-3.5 h-3.5 text-teal-400" aria-hidden="true"><use href="#i-mail"/></svg>
+              <a href="mailto:info.venezuelaexporta@gmail.com" class="hover:text-teal-300 transition-colors">info.venezuelaexporta@gmail.com</a>
             </li>
             <li class="flex items-center gap-2">
-              <i data-lucide="phone" class="w-3.5 h-3.5 text-teal-400"></i>
-              <span>0412-000-0000 (WhatsApp)</span>
+              <svg class="icon w-3.5 h-3.5 text-teal-400" aria-hidden="true"><use href="#i-phone"/></svg>
+              <a href="https://wa.me/584245264461?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20taller%20Venezuela%20Exporta" target="_blank" rel="noopener" class="hover:text-teal-300 transition-colors">0424-526-4461 (WhatsApp)</a>
             </li>
             <li class="flex items-center gap-2">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-teal-400"></i>
-              <span>Caracas, Venezuela</span>
+              <svg class="icon w-3.5 h-3.5 text-teal-400" aria-hidden="true"><use href="#i-map-pin"/></svg>
+              <span>Barquisimeto, Venezuela</span>
             </li>
           </ul>
         </div>
@@ -1311,10 +1347,14 @@
         <!-- Formulario Link -->
         <div>
           <div class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-3">Inscripción Oficial</div>
-          <p class="text-[11px] text-slate-400 mb-3">Completa tu registro y adjunta tu comprobante en el formulario oficial:</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScn84gURqvDGxuDQjgawbleKznxOlFO-nxruaA_dk5CeyrjCA/viewform" target="_blank" rel="noopener" class="btn-teal w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 text-white">
+          <p class="text-[11px] text-slate-400 mb-3">Completa tu registro gratuito y recibe tu pase digital al instante:</p>
+          <a href="#registro" class="btn-teal w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 text-white">
+            <span>Regístrate Ahora</span>
+            <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+          <a data-gform href="https://docs.google.com/forms/d/e/1FAIpQLScn84gURqvDGxuDQjgawbleKznxOlFO-nxruaA_dk5CeyrjCA/viewform" target="_blank" rel="noopener" class="btn-teal w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 text-white mt-2">
             <span>Formulario Google Forms</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <svg class="icon w-3.5 h-3.5" aria-hidden="true"><use href="#i-external-link"/></svg>
           </a>
         </div>
 
@@ -1326,7 +1366,7 @@
           Programa actualizado a la normativa vigente de comercio exterior de Venezuela (Protocolo Unificado, Decreto 5.191, Gaceta Oficial 43.273).
         </div>
         <div class="flex gap-4 shrink-0 text-slate-500">
-          <span>Bancoex 10 Pasos</span>
+          <span>Ruta de 10 pasos</span>
           <span>•</span>
           <span>Incoterms® 2020</span>
         </div>
@@ -1335,10 +1375,35 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/app.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
+  <!-- Asistente de IA (maqueta: la API se conecta después, ver js/asistente.js) -->
+  <div class="as-fab no-print">
+    <span id="as-fab-tip" class="as-fab-tip" role="status">¿Dudas sobre el taller? Pregúntame</span>
+    <button id="as-fab-btn" class="as-fab-btn" type="button" aria-label="Abrir asistente de ayuda" aria-expanded="false" aria-controls="as-panel"><svg class="icon" aria-hidden="true"><use href="#i-message-circle"/></svg></button>
+  </div>
+  <section id="as-panel" class="as-panel no-print" role="dialog" aria-label="Asistente virtual de Venezuela Exporta">
+    <div class="as-head">
+      <div class="as-avatar"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></div>
+      <div><strong>Asistente Venezuela Exporta</strong><span>En línea · modo demostración</span></div>
+      <button id="as-close" class="as-close" type="button" aria-label="Cerrar asistente"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="as-note">Respuestas de prueba. Muy pronto este asistente usará IA para resolver cualquier duda.</div>
+    <div id="as-msgs" class="as-msgs" aria-live="polite"></div>
+    <div id="as-chips" class="as-chips">
+      <button class="as-chip" type="button">¿Es gratis?</button><button class="as-chip" type="button">¿Cuándo es?</button><button class="as-chip" type="button">¿Qué voy a aprender?</button><button class="as-chip" type="button">¿Necesito experiencia?</button>
+    </div>
+    <form id="as-form" class="as-form" autocomplete="off">
+      <input id="as-input" type="text" maxlength="300" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta">
+      <button type="submit" aria-label="Enviar"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></button>
+    </form>
+  </section>
+
+  <!-- Scripts (clásicos, sin módulos: funcionan también abriendo el archivo directo) -->
+  <script src="js/config.js"></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/countdown.js" defer></script>
+  <script src="js/registro.js" defer></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/patrocinadores.js" defer></script>
+  <script src="js/asistente.js" defer></script>
 </body>
 </html>

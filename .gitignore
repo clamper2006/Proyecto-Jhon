@@ -1,0 +1,13 @@
+# Ignorar carpetas de trabajo local y referencias
+/la version que me paso/
+/las mejoras que desea implementar/
+/2da version que me esta pasando el para guia/
+/fotos de cloudflare para pasarselas/
+/v2/
+
+# Ignorar archivos comprimidos
+*.zip
+
+# Entorno / logs
+.DS_Store
+Thumbs.db

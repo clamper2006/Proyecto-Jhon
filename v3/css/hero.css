@@ -1,8 +1,8 @@
 /* ===== hero.css — escena pinneada: vista cenital → vista lateral → el barco sale hacia arriba =====
    Todo se mueve con transform/opacity (GPU). JS (hero.js) escribe los valores según el scroll. */
 .hero{position:relative;color:#fff;background:#0a5f9e}
-.js .hero{height:230vh}
-.hero-stage{position:sticky;top:0;height:100vh;height:100svh;min-height:560px;overflow:hidden;isolation:isolate;display:flex;align-items:center;padding:7rem 0 8rem}
+.js .hero{height:260vh}
+.hero-stage{--len:min(700px,51vw);--sw:calc(var(--len) * 2.5714);--sx:74%;--ty0:50%;--ty1:72%;position:sticky;top:0;height:100vh;height:100svh;min-height:560px;overflow:hidden;isolation:isolate;display:flex;align-items:center;padding:7rem 0 8rem}
 html:not(.js) .hero-stage{position:relative;height:auto;min-height:100svh}
 .hero-scene{position:absolute;inset:0;z-index:-1;overflow:hidden;contain:layout paint}
 html:not(.js) .hero-scene--top{display:none}
@@ -11,8 +11,6 @@ html:not(.js) .hero-scene--top{display:none}
 
 /* ---- Vista cenital ---- */
 .sea-top{position:absolute;top:0;bottom:0;left:-600px;width:calc(100% + 600px);background:url(../assets/sea-top.svg) 0 0/600px 600px repeat;will-change:transform;animation:seaTop 38s linear infinite}
-.ship-top-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;perspective:1100px;perspective-origin:50% 38%;padding-right:0}
-.ship-top{width:min(1000px,74vw);height:auto;max-width:none;transform-origin:50% 72%;will-change:transform,opacity;margin-right:-3vw}
 @keyframes seaTop{to{transform:translate3d(600px,0,0)}}
 
 /* ---- Vista lateral (cielo, olas, barco) ---- */
@@ -26,12 +24,6 @@ html:not(.js) .hero-scene--top{display:none}
 .hero-wave--back{bottom:25%;height:20%;background-image:url(../assets/wave-back.svg);animation:drift 46s linear infinite}
 .hero-wave--mid{bottom:11%;height:22%;background-image:url(../assets/wave-mid.svg);animation:drift 30s linear infinite reverse}
 .hero-wave--front{bottom:-2%;height:20%;background-image:url(../assets/wave-front.svg);animation:drift 21s linear infinite}
-.hero-ship{position:absolute;right:-1vw;bottom:19%;width:min(840px,56vw);will-change:transform;transform-origin:50% 100%}
-.hero-ship-bob{animation:bob 7s ease-in-out infinite;transform-origin:50% 88%}
-.hero-ship img{width:100%;height:auto;filter:drop-shadow(0 14px 14px rgba(3,30,60,.35))}
-.hero-foam{position:absolute;bottom:3%;height:7%;border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,255,255,.9) 0%,rgba(255,255,255,.35) 45%,transparent 72%);animation:foam 3.4s ease-in-out infinite}
-.hero-foam--bow{right:-3%;width:20%}
-.hero-foam--stern{left:1%;width:24%;animation-delay:-1.6s}
 .hero-glints span{position:absolute;width:44px;height:6px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.95),transparent 70%);opacity:0;animation:glint 4.2s ease-in-out infinite;animation-delay:var(--d,0s)}
 .hero-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,24,48,.62) 0%,rgba(6,24,48,.36) 40%,rgba(6,24,48,0) 68%)}
 
@@ -47,30 +39,25 @@ html:not(.js) .hero-scene--top{display:none}
 
 @keyframes drift{to{transform:translate3d(-50%,0,0)}}
 @keyframes bob{0%,100%{transform:translate3d(0,0,0) rotate(-.45deg)}50%{transform:translate3d(0,-7px,0) rotate(.55deg)}}
-@keyframes foam{0%,100%{opacity:.55;transform:scaleX(.85)}50%{opacity:1;transform:scaleX(1.12)}}
 @keyframes glint{0%,100%{opacity:0;transform:scaleX(.4)}45%{opacity:.9;transform:scaleX(1)}}
 @keyframes cue{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
 
 /* ahorro de recursos */
 .hero.is-paused *,.hero.side-off .hero-scene--side *,.hero.top-off .hero-scene--top *{animation-play-state:paused!important}
-.lite .hero-clouds,.lite .hero-glints span,.lite .hero-foam,.lite .hero-cue i::after{animation:none!important}
+.lite .hero-clouds,.lite .hero-glints span,.lite .hero-cue i::after{animation:none!important}
 .lite .hero-glints{display:none}
-.lite .hero-ship img{filter:none}
-.lite .hero-wave--back{animation-duration:90s}
-.lite .sea-top{animation-duration:90s}
+.lite .hero-wave--back,.lite .hero-wave--mid,.lite .sea-top{animation:none!important}
+.lite .hero-wave--front{animation-duration:34s}
 
 @media (max-width:1023px){
-  .js .hero{height:220vh}
+  .js .hero{height:240vh}
   .hero-scrim{background:linear-gradient(180deg,rgba(6,24,48,.74) 0%,rgba(6,24,48,.45) 52%,rgba(6,24,48,.05) 100%)}
-  .hero-stage{padding:6.5rem 0 1rem;align-items:flex-start}
-  .ship-top-wrap{align-items:flex-end;padding-bottom:22%}
-  .ship-top{width:138vw;margin-right:-1vw}
+  .hero-stage{--len:98vw;--sx:50%;--ty0:74%;--ty1:calc(100% - 150px);padding:6.5rem 0 1rem;align-items:flex-start}
   .hero-sky{bottom:248px;background:linear-gradient(180deg,#0b66c8 0%,#2d98ea 55%,#8dd0ff 88%,#d9f1ff 100%)}
   .hero-sea{top:auto;height:250px}
   .hero-wave--back{bottom:80px;height:90px}
   .hero-wave--mid{bottom:56px;height:110px}
   .hero-wave--front{bottom:-14px;height:100px}
-  .hero-ship{width:112vw;right:-20vw;bottom:91px}
   .hero-cue{display:none}
 }
 @media (max-width:1023px) and (max-height:760px){.hero-lead{display:none}}
@@ -81,3 +68,15 @@ html:not(.js) .hero-scene--top{display:none}
   .hero-scene--top{display:none}
   .js .hero-scene--side{opacity:1;visibility:visible;transform:none}
 }
+
+/* ---- Barco 3D (cuadros pre-renderizados; se mezclan según el scroll) ---- */
+.s3d{position:absolute;width:0;height:0;left:var(--sx);will-change:transform}
+.s3d--top{top:var(--ty0)}
+.s3d--side{top:var(--ty1)}
+.s3d-in{position:absolute;left:0;top:0;width:var(--sw);aspect-ratio:18/5;transform:translate(-61.11%,-50%)}
+.s3d-bob{position:absolute;inset:0}
+.s3d--side .s3d-bob{animation:bob 7s ease-in-out infinite;transform-origin:61% 70%}
+.s3d-f{position:absolute;inset:0;width:100%;height:100%;max-width:none;opacity:0}
+.s3d--side .s3d-f[data-f="4"]{opacity:1}
+.s3d-f{will-change:opacity}
+@media (prefers-reduced-motion:reduce){.s3d--side .s3d-bob{animation:none}}

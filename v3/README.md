@@ -1,4 +1,4 @@
-# Venezuela Exporta — web del taller (v2)
+# Venezuela Exporta — web del taller (v3)
 
 HTML + CSS + JS vanilla, sin frameworks ni dependencias en runtime. Es una PWA (manifest + service worker).
 
@@ -24,7 +24,8 @@ js/patrocinadores.js    marquee infinito (pausa fuera de pantalla)
 js/asistente.js         chat de ayuda (modo demostración; punto de enganche para Gemini)
 js/countdown.js         cuenta regresiva
 js/registro.js          pre-registro y pase digital
-assets/*.svg            barco (lateral y cenital), olas, nubes, mar, puerto
+assets/ship3d-0..4.svg  el barco pre-renderizado en 5 ángulos (cenital → lateral con proa)
+assets/*.svg            olas, nubes, mar visto desde arriba, puerto, icono (bandera)
 assets/sponsors/*.svg   8 placeholders de patrocinadores
 sw.js, manifest.webmanifest
 tools/mini_tw.py        regenera css/utilities.css si agregas clases nuevas
@@ -44,9 +45,11 @@ tools/mini_tw.py        regenera css/utilities.css si agregas clases nuevas
 - Si cambias `index.html` y usas clases nuevas: `python tools/mini_tw.py index.html css/utilities.css`.
 
 ## Hero: cómo funciona la animación
-El hero mide 230vh y la escena queda fija (sticky) mientras haces scroll:
-`0–30%` vista cenital del barco → `22–60%` la cámara baja y pasa a vista lateral en ángulo → `62–100%` el barco sigue de largo y sale hacia arriba.
-Los tiempos están en `js/hero.js` (constantes dentro de `frame()`); la altura del scroll en `css/hero.css` (`.js .hero{height:230vh}`).
+El hero mide 260vh y la escena queda fija (sticky) mientras haces scroll. El barco está pre-renderizado en 5 ángulos
+(`assets/ship3d-0..4.svg`, generados con proyección 3D) y el scroll los mezcla:
+cenital → cámara que baja y gira (se ve la proa) → vista lateral en ángulo. Al terminar queda **flotando en el agua** y la escena
+sale con el scroll normal (ya no sube hacia las nubes). Los tiempos están en `js/hero.js` (`frame()`), la altura en `css/hero.css`.
+Posición del barco: variables `--ty0` (vista cenital) y `--ty1` (vista final, sobre las olas) en `.hero-stage`.
 
 ## Patrocinadores
 Cada tarjeta está en `index.html` dentro de `#patrocinadores` (`<figure class="sponsor-card">`). Para poner un patrocinador real:
@@ -62,3 +65,12 @@ Responde con una base local de preguntas frecuentes (`KB` en `js/asistente.js`).
 
 ## Decisión de stack
 Se mantiene HTML/CSS/JS vanilla: es una landing estática, se mantiene entre dos personas sin React, pesa ~200 KB y despliega tal cual en GitHub Pages y Vercel. Reconsiderar (React/TS o Astro) solo si se agregan login de alumnos, progreso de cursos o un panel.
+
+## Cambios de la v3
+- Sede: Barquisimeto, Venezuela (pie, asistente y contacto).
+- Registro: ahora es el formulario principal (`#registro`), con banner "¡Regístrate ya!". Todos los botones de inscripción apuntan a él.
+- Formulario de Google: oculto, **no borrado**. Para volver a mostrarlo: `googleFormActivo: true` en `js/config.js`.
+- Logo: bandera de Venezuela (header, pie, icono de la PWA).
+- Contacto: info.venezuelaexporta@gmail.com y WhatsApp 0424-526-4461; sección **Contáctanos** (`#contacto`).
+- "Bancoex" eliminado; solo aparece "Emcoex" bajo el título "Seis Módulos, Una Sola Ruta Clara".
+- Móvil: header con botón "Regístrate", hero adaptado y barco completo en toda la secuencia.
